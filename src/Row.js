@@ -21,7 +21,6 @@ const StyledRow = styled.div`
 `;
 
 const Row = ({ id, text, handleDrag, handleDrop }) => {
-  console.log('DragSrc', DragSrc);
   return (
     <StyledRow
       id={id}
