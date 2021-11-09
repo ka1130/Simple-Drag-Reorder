@@ -27,12 +27,22 @@ function App() {
     const dropRowOrder = dropRow.order;
 
     const newRowState = rows.map((row) => {
+      //dragging an item down
+      if (dragRowOrder < dropRowOrder &&
+          row.order > dragRowOrder &&
+          row.order <= dropRowOrder) {
+        row.order--;
+      }
+      //dragging an item up
+      if (dragRowOrder > dropRowOrder &&
+          row.order < dragRowOrder &&
+          row.order >= dropRowOrder) {
+        row.order++;
+      }
       if (row.id === dragId) {
         row.order = dropRowOrder;
       }
-      if (row.id === e.currentTarget.id) {
-        row.order = dragRowOrder;
-      }
+
       return row;
     });
 
