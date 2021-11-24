@@ -29,7 +29,11 @@ const Row = ({ id, text, handleDrag, handleDrop }) => {
       onDragStart={handleDrag}
       onDrop={handleDrop}
     >
-      <span className="dragIcon" />
+      <span 
+        className="dragIcon"
+        draggable="true" 
+        onDragStart={(ev) => ev.preventDefault()} 
+      />
       <span>{text}</span>
     </StyledRow>
   );
